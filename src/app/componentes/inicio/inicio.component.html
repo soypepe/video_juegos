@@ -1,0 +1,33 @@
+<div class="filtros">
+  <mat-form-field>
+    <mat-label>Ordenar</mat-label>
+    <mat-select panelClass="ordenar-select" [(ngModel)]="ordenar" (selectionChange)="buscarJuego(ordenar)">
+      <mat-option value="nombre">Nombre</mat-option>
+      <mat-option value="-released">Salida</mat-option>
+      <mat-option value="-added">Agregado</mat-option>
+      <mat-option value="-created">Creado</mat-option>
+      <mat-option value="-updated">Actualizado</mat-option>
+      <mat-option value="-rating">Calificacion</mat-option>
+      <mat-option value="metacritic">Metacritic</mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+
+<div class="juegos">
+  <ng-container *ngFor="let juego of juegos">
+    <div class="juego" (click)="abrirDetallesJuego(juego.id)">
+      <div class="juego-miniatura-contenedor">
+        <img *ngIf="juego.background_image" src="{{juego.background_image}}" alt="miniatura" class="juego-miniatura">
+        <p *ngIf="!juego.background_image">Sin imagen</p>
+      </div>
+      <div class="juego-descripcion">
+        <p class="juego-nombre">{{ juego.name }}</p>
+        <div class="juego-plataformas">
+          <img *ngFor="let juegoPlataform of juego.parent_platforms"
+            src="assets/images/plataformas/{{juegoPlataform.platform.slug}}.svg" alt="{{juegoPlataform.platform.slug}}"
+            class="juego-plataforma">
+        </div>
+      </div>
+    </div>
+  </ng-container>
+</div>

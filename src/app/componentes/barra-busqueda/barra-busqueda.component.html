@@ -1,0 +1,7 @@
+<div class="busqueda-contenedor">
+  <form class="busqueda-form" #form="ngForm" (ngSubmit)="enviar(form)">
+    <span class="logo" routerLink="/">Video Juegos</span>
+    <input class="busqueda-input" name="buscar" ngModel placeholder="Busque mas de 500.000 juegos" />
+    <button class="busqueda-btn">Buscar</button>
+  </form>
+</div>

@@ -1,0 +1,44 @@
+<div class="juego-tabs">
+  <mat-tab-group mat-align-tabs="start" backgroundColor="primary">
+    <mat-tab label="Acerca de">
+      <p *ngIf="juego.parent_platforms?.length" class="juego-tabs-par">
+        Plataformas:
+        <span *ngFor="let juego of juego.parent_platforms; let last=last">
+          {{juego.platform.name}} <span *ngIf="!last">, </span>
+        </span>
+      </p>
+      <p *ngIf="juego.publishers?.length" class="juego-tabs-par">
+        Companias:
+        <span *ngFor="let compania of juego.publishers; let last=last">
+          {{compania.name}} <span *ngIf="!last">, </span>
+        </span>
+      </p>
+      <p *ngIf="juego.website" class="juego-tabs-par">
+        Sitio Web:
+        <a href="{{juego.website}}" class="juego-tabs-link" target="_blank">{{juego.website}}</a>
+      </p>
+      <div class="juego-descripcion" [innerHTML]="juego.description"></div>
+      <p class="juego-tabs-votos">
+        <ng-container *ngFor="let calificacion of juego.ratings">
+          <span *ngIf="calificacion.title === 'exceptional'">
+            <mat-icon class="juego-votos-up">thumb_up</mat-icon>
+            <span class="juego-votos-contador">{{calificacion.count || 0}}</span>
+          </span>
+          <span *ngIf="calificacion.title === 'skip'">
+            <mat-icon class="juego-votos-down">thumb_down</mat-icon>
+            <span class="juego-votos-contador">{{calificacion.count || 0}}</span>
+          </span>
+        </ng-container>
+      </p>
+    </mat-tab>
+    <mat-tab label="Capturas" *ngIf="juego.screenshots?.length">
+      <img class="juego-captura" *ngFor="let captura of juego.screenshots" src="{{captura.image}}" alt="captura">
+    </mat-tab>
+    <mat-tab label="Trailers" *ngIf="juego.trailers?.length">
+      <video controls class="juego-trailer" *ngFor="let trailer of juego.trailers">
+        <source src="{{trailer.data?.max}}" type="video/mp4">
+        tu maquina esta en bolas
+      </video>
+    </mat-tab>
+  </mat-tab-group>
+</div>
