@@ -10,6 +10,6 @@ Proyecto hecho en Angular 11
 
 Capturas:
 
-<img src="https://gitlab.com/soy.pepe/video_juegos/-/raw/master/video-juegos1.JPG" width="500" height="300">
-<img src="https://gitlab.com/soy.pepe/video_juegos/-/raw/master/video-juegos2.JPG" width="500" height="300">
-<img src="https://gitlab.com/soy.pepe/video_juegos/-/raw/master/video-juegos3.JPG" width="500" height="300">
+<img src="https://raw.githubusercontent.com/soypepe/video_juegos/master/video-juegos1.JPG" width="500" height="300">
+<img src="https://raw.githubusercontent.com/soypepe/video_juegos/master/video-juegos2.JPG" width="500" height="300">
+<img src="https://raw.githubusercontent.com/soypepe/video_juegos/master/video-juegos3.JPG" width="500" height="300">
